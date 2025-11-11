@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  List<Widget> tabs = [HabitScreen(), HomeAcheve(), SettingsHome()];
+  List<Widget> tabs = [const HabitScreen(), HomeAcheve(), const SettingsHome()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,13 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home_outlined),
+                  icon: const Icon(Icons.home_outlined),
                   label: AppLocalizations.of(context)!.home),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.workspace_premium),
+                  icon: const Icon(Icons.workspace_premium),
                   label: AppLocalizations.of(context)!.achievements),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings_outlined),
+                  icon: const Icon(Icons.settings_outlined),
                   label: AppLocalizations.of(context)!.setting),
             ]),
       ),

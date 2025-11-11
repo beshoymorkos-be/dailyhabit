@@ -9,8 +9,6 @@ import 'package:dailyhabitd/feature/habit/presintations/cubit/habit_cubit.dart';
 import 'package:dailyhabitd/feature/habit/presintations/cubit/habit_state.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../core/constent/app_theme.dart';
-import 'package:android_intent_plus/android_intent.dart';
-import 'package:android_intent_plus/flag.dart';
 
 class AddHabit extends StatefulWidget {
   static const routeName = 'add';

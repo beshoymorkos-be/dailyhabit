@@ -6,7 +6,7 @@ import 'package:dailyhabitd/feature/habit/presintations/cubit/habit_state.dart';
 import 'package:dailyhabitd/feature/habit/presintations/habit_screen/details_habit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // ✅ أضفنا الترجمة
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../../../core/constent/app_theme.dart';
 import '../../../achievements/presintations/cubit/achivement_state.dart';
@@ -24,7 +24,7 @@ class ListHabit extends StatefulWidget {
 class _ListHabitState extends State<ListHabit> {
   @override
   Widget build(BuildContext context) {
-    final local = AppLocalizations.of(context)!; // ✅ للوصول إلى النصوص المترجمة
+    final local = AppLocalizations.of(context)!;
     DateTime now = DateTime.now();
 
     if (widget.habitEntity.lastUpdat == null ||
@@ -106,7 +106,7 @@ class _ListHabitState extends State<ListHabit> {
           ),
           trailing: widget.habitEntity.counter >=
                   int.parse(widget.habitEntity.goalHabitBerDay)
-              ? Icon(
+              ? const Icon(
                   Icons.done,
                   size: 30,
                   color: AppTheme.primaryMint,
@@ -117,7 +117,7 @@ class _ListHabitState extends State<ListHabit> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                             content: Text(
-                                "${local.errorOccured}: ${state.message}")), // ✅
+                                "${local.errorOccured}: ${state.message}")),
                       );
                     }
                   },

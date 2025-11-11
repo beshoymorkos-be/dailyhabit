@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // ✅ استيراد الترجمة
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../../core/constent/app_theme.dart';
 import '../setting_cubit/settihg_cubit.dart';
 
@@ -9,7 +9,7 @@ class SettingsHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final local = AppLocalizations.of(context)!; // ✅ للوصول إلى النصوص المترجمة
+    final local = AppLocalizations.of(context)!;
 
     return BlocBuilder<SettingCubit, Locale>(
       builder: (context, locale) {
@@ -21,7 +21,7 @@ class SettingsHome extends StatelessWidget {
           backgroundColor: AppTheme.backgroundLight,
           appBar: AppBar(
             centerTitle: true,
-            title: Text(local.habitAppTitle, // ✅ مترجم
+            title: Text(local.habitAppTitle,
                 style: Theme.of(context).textTheme.titleLarge),
             flexibleSpace: Container(
               decoration: const BoxDecoration(
@@ -41,19 +41,18 @@ class SettingsHome extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    local.preferences, // ✅ مترجم
+                    local.preferences,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                // 🌙 الوضع الليلي
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.dark_mode,
                         color: AppTheme.primaryBlue),
-                    title: Text(local.darkMode), // ✅ مترجم
+                    title: Text(local.darkMode),
                     trailing: Switch(
                       value: darkMode,
                       onChanged: (val) {
@@ -65,7 +64,6 @@ class SettingsHome extends StatelessWidget {
 
                 const SizedBox(height: 20),
 
-                // 🌐 اللغة
                 Card(
                   child: ListTile(
                     leading:
