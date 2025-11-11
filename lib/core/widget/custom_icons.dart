@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
 
 class CustomIcons extends StatefulWidget {
-  const CustomIcons({super.key});
+  final Function(String) onIconSelected;
+  const CustomIcons({super.key,required this.onIconSelected});
 
   @override
   State<CustomIcons> createState() => _CustomIconsState();
 }
 
 class _CustomIconsState extends State<CustomIcons> {
-  IconData? _selectedIcon;
+  String? _selectedIcon;
 
-
-  final List<IconData> _icons = [
-    Icons.eco, // النبات
-    Icons.menu_book, // كتاب
-    Icons.fitness_center, // جيم
-    Icons.fitness_center_outlined,
-    Icons.water_drop,
-    Icons.water,
-    Icons.wb_sunny,
-    Icons.health_and_safety,
+  final List<String> _image = [
+   'eat',
+    'eating',
+    'gem',
+    'lab',
+    'reading',
+    'reminder',
+    'sports',
+    'study',
+    'tasks',
+    'water',
+    'yoga'
   ];
 
   @override
@@ -53,14 +56,15 @@ class _CustomIconsState extends State<CustomIcons> {
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
             ),
-            itemCount: _icons.length,
+            itemCount: _image.length,
             itemBuilder: (context, index) {
-              final icon = _icons[index];
-              final isSelected = _selectedIcon == icon;
+              final image = _image[index];
+              final isSelected = _selectedIcon == image;
 
               return GestureDetector(
                 onTap: () {
-                  setState(() => _selectedIcon = icon);
+                  setState(() => _selectedIcon = image);
+                  widget.onIconSelected(image);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -70,11 +74,7 @@ class _CustomIconsState extends State<CustomIcons> {
                         ? Border.all(color: Colors.blue, width: 3)
                         : null,
                   ),
-                  child: Icon(
-                    icon,
-                    size: 28,
-                    color: isSelected ? Colors.blue : Colors.black54,
-                  ),
+                  child: Image.asset('assets/images/$image.png')
                 ),
               );
             },
