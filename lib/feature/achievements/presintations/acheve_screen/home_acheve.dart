@@ -65,12 +65,12 @@ class _HomeAcheveState extends State<HomeAcheve> {
               ),
             ),
             body: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.all(20.0.sp),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20.sp),
                     decoration: const BoxDecoration(
                       gradient: AppTheme.mainGradient,
                       borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -112,13 +112,13 @@ class _HomeAcheveState extends State<HomeAcheve> {
                                   style: const TextStyle(
                                     color: AppTheme.surfaceCard,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 30,
+                                    fontSize: 20,
                                   ),
                                 ),
                               ],
                             ),
                             SizedBox(
-                              width: 30.w,
+                              width: 15.w,
                             ),
                             Container(
                               width: 2,
@@ -126,7 +126,7 @@ class _HomeAcheveState extends State<HomeAcheve> {
                               height: 100,
                             ),
                             SizedBox(
-                              width: 30.w,
+                              width: 15.w,
                             ),
                             Flexible(
                               child: Column(
@@ -216,7 +216,6 @@ class _HomeAcheveState extends State<HomeAcheve> {
     );
   }
 
-  /// ✅ تحديد المستوى بناءً على عدد الإنجازات
   String getLevel(BuildContext context, int count, int day, int numHabit) {
     if (count < day * numHabit * 0.25)
       return AppLocalizations.of(context)!.beginner;

@@ -165,13 +165,13 @@ class _DetailsHabitState extends State<DetailsHabit> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 30.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
@@ -199,7 +199,7 @@ class _DetailsHabitState extends State<DetailsHabit> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
@@ -228,7 +228,7 @@ class _DetailsHabitState extends State<DetailsHabit> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
@@ -260,7 +260,7 @@ class _DetailsHabitState extends State<DetailsHabit> {
                     ],
                   ),
                   SizedBox(
-                    height: 60,
+                    height: 60.h,
                   ),
                   InkWell(
                     onTap: () {
